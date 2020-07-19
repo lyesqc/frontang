@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+ fdss6:
+   build:
+    context: .
+    dockerfile: DockerFile.txt
+   ports:
+    - "81:81"
+   deploy:
+     replicas: 2
+   #config:
+    #- source: myconfig
+     # target: /etc/nginx/
+configs:
+  myconfig: 
+   file: ./nginx.conf
+   
